@@ -10,7 +10,7 @@ import datetime
 from corpora.Oasis.Oasis import Oasis
 from corpora.Switchboard.Switchboard import Switchboard
 from corpora.AMI.AMI import AMI
-from corpora.VerbMobil.VerbMobil import VerbMobil
+# from corpora.VerbMobil.VerbMobil import VerbMobil
 from corpora.Maptask.Maptask import Maptask
 from pathlib import Path
 
@@ -20,8 +20,8 @@ if __name__ == "__main__":
         AMI(str(Path("data/AMI/corpus").resolve())),
         Oasis(str(Path("data/Oasis/corpus/Release").resolve())),
         Switchboard(str(Path("data/Switchboard/corpus").resolve())),
-        VerbMobil(str(Path("data/Verbmobil").resolve()),
-                  en_files=str(Path("corpora/VerbMobil/files.txt").resolve())),
+        # VerbMobil(str(Path("data/Verbmobil").resolve()),
+        #           en_files=str(Path("corpora/VerbMobil/files.txt").resolve())),
         Maptask(str(Path("data/Maptask/maptaskv2-1").resolve()))])
 
     parser = argparse.ArgumentParser(description='DialogueActTrain - Train a DA Tagger using ISO-converted corpora')

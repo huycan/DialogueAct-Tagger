@@ -13,6 +13,9 @@ import spacy
 import logging
 
 
+spacy_nlp = spacy.load("en_core_web_sm")
+
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("ISO_DA")
 
@@ -38,7 +41,7 @@ class SVMTrain(Trainer):
     def build_features(tagged_utterances, indexed_pos=True, indexed_dep=False,
                        ngrams=True, dep=True, prev=True, nlp_inst=None):
         if nlp_inst is None:
-            nlp_inst = spacy.load("en_core_web_sm")
+            nlp_inst = spacy_nlp
         dimension_features = []
         docs = nlp_inst.pipe([utt[0] for utt in tagged_utterances])
         for utt, doc in zip(tagged_utterances, docs):
